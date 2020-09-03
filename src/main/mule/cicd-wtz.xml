@@ -12,6 +12,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:request-config>
 	<flow name="cicd-wtzFlow" doc:id="5477e2b0-4ff9-496b-a603-6fb3f718f389" >
 		<http:listener doc:name="Listener" doc:id="03baa337-9736-4e33-919e-430fb8ee596c" config-ref="HTTP_Listener_config" path="/wtzapp/{region}/{city}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="51045fdd-8f92-44ba-b7e5-e0bdf0f5205a" message="Req Received"/>
 		<http:request method="GET" doc:name="Request" doc:id="7e1fa564-26cd-40d1-8bca-e5ee6838b130" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
